@@ -8,8 +8,9 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "users", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"email"})
+@Table(name = "collaborateur", uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"email"}),
+        @UniqueConstraint(columnNames = {"nomutilisateur"})
 })
 public class Collaborateur {
 
@@ -19,6 +20,7 @@ public class Collaborateur {
     private String nom;
     private String prenom;
     private String email;
+    private String nomutilisateur;
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
